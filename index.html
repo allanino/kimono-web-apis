@@ -1,0 +1,53 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+  <title>Kimono APIs</title>
+  <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Source+Sans+Pro">
+    <style>
+      body {
+          font-family: 'Source Sans Pro', 'Arial';
+          font-size: 14px;
+          background-color: #F9F9F9;
+        }
+
+      .api iframe {
+        float: left;
+        margin-left: 5%;
+        margin-bottom: 5%;
+        width:25%;
+        height:600px;
+        border:1px solid #efefef;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1 align="center">Kimono APIs</h1>
+
+    <div class="api">
+      <iframe src="https://www.kimonolabs.com/kimonoblock/?apiid=3d9b1flc&apikey=mykey&title=Wii U prices&titleColor=ffffff&titleBgColor=659fc0&bgColor=ffffff&textColor=6b7770&linkColor=659fc0&propertyColor=dddddd"></iframe>
+    </div>
+
+    <div class="api">
+      <iframe src="https://www.kimonolabs.com/kimonoblock/?apiid=a233do64&apikey=mykey&title=Submarino Games Lançamentos&titleColor=ffffff&titleBgColor=659fc0&bgColor=ffffff&textColor=6b7770&linkColor=659fc0&propertyColor=dddddd"></iframe>
+    </div>
+
+    <div class="api">
+      <iframe src="https://www.kimonolabs.com/kimonoblock/?apiid=9xncgu16&apikey=mykey&apiversion=3&title=Submarino TVs LED&titleColor=ffffff&titleBgColor=659fc0&bgColor=ffffff&textColor=6b7770&linkColor=659fc0&propertyColor=dddddd"></iframe>
+    </div>
+
+  <script type="text/javascript">
+    function getURLParameter(name) {
+      return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search)||[,""])[1].replace(/\+/g, '%20'))||null
+    }
+
+    var apikey = getURLParameter('apikey')
+    var elem = document.getElementsByClassName('api');
+    for (var i = 0; i < elem.length; ++i) {
+      var item = elem[i];
+      item.innerHTML = item.innerHTML.replace("mykey", apikey);   
+    }
+  </script>
+
+</body>  
+</html>
